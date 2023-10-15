@@ -71,6 +71,7 @@ body {
 
 .calc-input input[type="text"] {
     width: max-content;
+    padding: 3px;
     background-color: transparent;
     border: 1px solid transparent;
     border-bottom: 1px solid #FFF;

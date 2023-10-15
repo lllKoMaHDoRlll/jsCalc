@@ -1,9 +1,8 @@
 const products = {
-    "Product1": 10,
-    "Product2": 20,
-    "Product3": 30,
-    "Product4": 40,
-    "Product5": 50,
+    "Sandwich": 10,
+    "Espresso": 20,
+    "Cola": 30,
+    "Latte": 40
 }
 
 let productsSelect = document.getElementById("products-select");
@@ -27,7 +26,7 @@ function calculate() {
 
     result = parseInt(quantityField.value) * productField.value;
 
-    if (isNaN(result)) {
+    if (isNaN(result) || result < 0) {
         result = "Invalid input!";
     }
 
