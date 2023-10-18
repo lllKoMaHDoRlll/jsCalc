@@ -5,16 +5,6 @@ const products = {
     "Latte": 40
 }
 
-let productsSelect = document.getElementById("products-select");
-
-for (const [product, price] of Object.entries(products)) {
-    const option = document.createElement("option");
-    const name = document.createTextNode(product);
-    option.setAttribute("value", price);
-    option.appendChild(name);
-    productsSelect.appendChild(option);
-}
-
 function calculate() {
     let calcEl = document.getElementsByClassName("calculator")[0];
     let productField = document.getElementsByName("products")[0];
@@ -33,3 +23,19 @@ function calculate() {
     resultField.innerHTML = result;
     return false;
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    let productsSelect = document.getElementById("products-select");
+
+    for (const [product, price] of Object.entries(products)) {
+        const option = document.createElement("option");
+        const name = document.createTextNode(product);
+        option.setAttribute("value", price);
+        option.appendChild(name);
+        productsSelect.appendChild(option);
+    }
+
+    let buttonEl = document.getElementById("calc-button");
+
+    buttonEl.addEventListener("click", calculate);
+});
